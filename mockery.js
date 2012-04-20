@@ -94,6 +94,7 @@ function hookedLoader(request, parent, isMain) {
                 if (!file) {
                     file = resolveFilename(request, parent);
                 }
+                delete m._cache[file];
                 if (file.indexOf('/') !== -1 && allow.paths.indexOf(file) === -1) {
                     allow.paths.push(file);
                 }
